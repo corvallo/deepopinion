@@ -1,0 +1,18 @@
+@import "colors";
+
+.radio {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  &__input {
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-right: 0.5rem;
+    accent-color: $black;
+    cursor: pointer;
+  }
+  &__label {
+    font-size: 16px;
+    font-weight: 400;
+  }
+}
