@@ -1,5 +1,6 @@
 .root {
   display: grid;
+  grid-template-columns: 1fr;
   grid-template-rows: 0.4fr 1fr 0.05fr;
   grid-template-areas:
     "header"
@@ -39,5 +40,29 @@
       display: flex;
       justify-content: end;
     }
+  }
+}
+.main {
+  grid-area: content;
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+  margin: 0 auto;
+
+  &__right,
+  &__left {
+    flex: 1;
+    gap: 10px;
+    display: flex;
+    font-size: 16px;
+    font-weight: 400;
+  }
+  &__right {
+    justify-content: end;
   }
 }
