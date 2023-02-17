@@ -21,8 +21,7 @@
     justify-content: center;
     & > h1 {
       font-weight: 700;
-      font-size: 20px;
-      line-height: 24px;
+      font-size: 1.2rem;
     }
   }
   &__actions {
@@ -48,7 +47,7 @@
   grid-area: main;
   &__container {
     width: 70%;
-    height: 100%;
+    height: 75vh;
     border: 2px solid $black;
     margin: 0 auto;
     position: relative;
