@@ -1,0 +1,42 @@
+.root {
+  display: grid;
+  grid-template-rows: 0.4fr 1fr 0.05fr;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+  height: 100vh;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 70%;
+  margin: 0 auto;
+  &__title {
+    display: flex;
+    justify-content: center;
+    & > h1 {
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 24px;
+    }
+  }
+  &__actions {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    &-left {
+      flex: 1;
+      display: flex;
+      justify-content: start;
+    }
+    &-right {
+      flex: 1;
+      display: flex;
+      justify-content: end;
+    }
+  }
+}
