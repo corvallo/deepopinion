@@ -1,9 +1,7 @@
-import { useState } from "react";
+import { FC } from "react";
 
-function App() {
-  const [count, setCount] = useState(0);
-
-  return <div>App</div>;
-}
+const App: FC = () => {
+  return <div>main</div>;
+};
 
 export default App;
