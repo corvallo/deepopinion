@@ -1,7 +1,7 @@
 .root {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 0.4fr 1fr 0.05fr;
+  grid-template-rows: 0.2fr 1fr 0.1fr;
   grid-template-areas:
     "header"
     "main"
@@ -43,7 +43,16 @@
   }
 }
 .main {
-  grid-area: content;
+  display: flex;
+  flex-direction: column;
+  grid-area: main;
+  &__container {
+    width: 70%;
+    height: 100%;
+    border: 2px solid $black;
+    margin: 0 auto;
+    position: relative;
+  }
 }
 
 .footer {

@@ -1,12 +1,12 @@
-import { FC } from "react";
+import { FC, PropsWithChildren } from "react";
 import Footer from "./Footer";
 import Header from "./Header";
 
-const Layout: FC = () => {
+const Layout: FC<PropsWithChildren> = ({ children }) => {
   return (
     <>
       <Header />
-      <div className='main' />
+      <main className='main'>{children}</main>
       <Footer />
     </>
   );
