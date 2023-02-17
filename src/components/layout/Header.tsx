@@ -8,10 +8,10 @@ const Header: FC = () => {
       </div>
       <div className='header__actions'>
         <div className='header__actions-left'>
-          <button>Test</button>
+          <button className='btn'>Test</button>
         </div>
         <div className='header__actions-right'>
-          <button>Add new item</button>
+          <button className='btn'>Add new item</button>
         </div>
       </div>
     </header>

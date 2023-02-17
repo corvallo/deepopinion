@@ -1,0 +1,13 @@
+@import "colors";
+
+.btn {
+  background: transparent;
+  border: 2px solid $black;
+  padding: 15px 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  &:hover {
+    background: $softGray;
+  }
+}
