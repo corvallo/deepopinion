@@ -7,6 +7,7 @@ export interface IProduct {
 
 export interface ProductsContextProps {
   products: IProduct[];
+  loading: boolean;
   generateProducts: (n: number) => void;
   addProduct: () => void;
 }

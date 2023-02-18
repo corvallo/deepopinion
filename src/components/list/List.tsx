@@ -1,5 +1,6 @@
 import { cloneElement, FC, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ListProps } from "../../@typings/list";
+import ScrollOnTopButton from "../controls/ScrollOnTopButton";
 
 const List: FC<ListProps> = ({ children, rowHeight = 100, gap = 1, bufferElements = 2 }) => {
   const listRef = useRef<HTMLDivElement>(null);
@@ -41,14 +42,17 @@ const List: FC<ListProps> = ({ children, rowHeight = 100, gap = 1, bufferElement
   }, []);
 
   return (
-    <div className='list' ref={listRef} onScroll={onScroll}>
-      <div className='list__header'>
-        <div>Product</div>
-        <div>Description</div>
-        <div>Price</div>
+    <>
+      <div className='list' ref={listRef} onScroll={onScroll}>
+        <div className='list__header'>
+          <div>Product</div>
+          <div>Description</div>
+          <div>Price</div>
+        </div>
+        <div style={{ height: `${innerHeight}px` }}>{visibleChildrens}</div>
       </div>
-      <div style={{ height: `${innerHeight}px` }}>{visibleChildrens}</div>
-    </div>
+      <ScrollOnTopButton />
+    </>
   );
 };
 export default List;
