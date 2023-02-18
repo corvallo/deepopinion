@@ -1,8 +1,9 @@
 @import "colors";
-
+@import "mixins";
 .btn {
   font-weight: 600;
   cursor: pointer;
+  font-size: 0.875rem;
   &-default {
     background: transparent;
     border: 2px solid $black;
@@ -11,6 +12,10 @@
     transition: all 0.3s ease-in-out;
     &:hover {
       background: $gray-100;
+    }
+    @include breakpoint_mixin(mobile) {
+      font-size: 0.75rem;
+      padding: 10px 15px;
     }
   }
   &-fab {

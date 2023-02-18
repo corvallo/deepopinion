@@ -45,9 +45,9 @@ const List: FC<ListProps> = ({ children, rowHeight = 100, gap = 1, bufferElement
     <>
       <div className='list' ref={listRef} onScroll={onScroll}>
         <div className='list__header'>
-          <div>Product</div>
-          <div>Description</div>
-          <div>Price</div>
+          <div className='list__header-inner'>Product</div>
+          <div className='list__header-inner'>Description</div>
+          <div className='list__header-inner'>Price</div>
         </div>
         <div style={{ height: `${innerHeight}px` }}>{visibleChildrens}</div>
       </div>

@@ -1,3 +1,5 @@
+@import "mixins";
+
 .root {
   display: grid;
   grid-template-columns: 1fr;
@@ -7,6 +9,9 @@
     "main"
     "footer";
   height: 100vh;
+  @include breakpoint_mixin(mobile tablet) {
+    grid-template-rows: 0.2fr 1fr 0.2fr;
+  }
 }
 
 .header {
@@ -28,6 +33,10 @@
     display: flex;
     align-items: center;
     width: 100%;
+    @include breakpoint_mixin(mobile tablet) {
+      flex-direction: column-reverse;
+      gap: 15px;
+    }
     &-left {
       flex: 1;
       display: flex;
@@ -45,12 +54,21 @@
   display: flex;
   flex-direction: column;
   grid-area: main;
+  @include breakpoint_mixin(mobile tablet) {
+    justify-content: center;
+  }
   &__container {
     width: 70%;
     height: 75vh;
     border: 2px solid $black;
     margin: 0 auto;
     position: relative;
+    @include breakpoint_mixin(tablet) {
+      height: 70vh;
+    }
+    @include breakpoint_mixin(mobile) {
+      height: 65vh;
+    }
   }
 }
 
@@ -61,16 +79,23 @@
   align-items: center;
   width: 70%;
   margin: 0 auto;
-
+  @include breakpoint_mixin(mobile) {
+    flex-direction: column;
+    gap: 0px;
+  }
   &__right,
   &__left {
     flex: 1;
     gap: 10px;
     display: flex;
-    font-size: 16px;
+    font-size: 0.75rem;
     font-weight: 400;
   }
   &__right {
     justify-content: end;
+    @include breakpoint_mixin(mobile) {
+      justify-content: center;
+      text-align: center;
+    }
   }
 }
