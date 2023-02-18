@@ -1,15 +1,18 @@
 import { CSSProperties, FC } from "react";
+import { ListElementProps } from "../../@typings/list";
 
-export interface ListElementProps {
-  index: number;
-  style?: CSSProperties;
-}
-const ListElement: FC<ListElementProps> = ({ index, style = {} }) => {
+const ListElement: FC<ListElementProps> = ({ index, product, style = {} }) => {
   return (
     <div className='list__element' style={{ ...style }}>
-      <div className='list__element-inner'>{index}</div>
-      <div className='list__element-inner'>{index}</div>
-      <div className='list__element-inner'>{index}</div>
+      <div className='list__element-inner'>
+        {index} {product.name}
+      </div>
+      <div className='list__element-inner'>
+        {index} {product.description}
+      </div>
+      <div className='list__element-inner'>
+        {index} {product.price}
+      </div>
     </div>
   );
 };

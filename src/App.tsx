@@ -1,15 +1,17 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
 import Layout from "./components/layout/Layout";
 import List from "./components/list/List";
 import ListElement from "./components/list/ListElement";
+import { ProductsContext } from "./providers/ProductsProvider";
 import "./styles/styles.scss";
 
 const App: FC = () => {
+  const { products } = useContext(ProductsContext);
   return (
     <Layout>
       <List rowHeight={100}>
-        {new Array(100).fill({}).map((_, i) => (
-          <ListElement key={i} index={i} />
+        {products.map((product, i) => (
+          <ListElement key={product.id} product={product} index={i} />
         ))}
       </List>
     </Layout>

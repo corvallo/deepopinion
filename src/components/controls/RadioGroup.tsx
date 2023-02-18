@@ -1,18 +1,9 @@
 import { FC } from "react";
-
-export interface RadioOption {
-  value: string | number;
-  label: string;
-}
-export interface RadioGroupProps {
-  options: RadioOption[];
-  name?: string;
-  onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
-}
+import { RadioGroupProps, RadioOption } from "../../@typings/radio";
 
 const RowOptions: FC<RadioGroupProps> = ({ options, name, onChange }) => {
   return (
-    <div role='radiogroup'>
+    <div role='radiogroup' className='radio__group'>
       {options.map((option: RadioOption, i: number) => {
         return (
           <label className='radio' key={`${name}_${i}`}>

@@ -1,11 +1,5 @@
 import { cloneElement, FC, useCallback, useEffect, useMemo, useRef, useState } from "react";
-
-export interface ListProps {
-  children: JSX.Element[];
-  rowHeight: number;
-  gap?: number;
-  bufferElements?: number;
-}
+import { ListProps } from "../../@typings/list";
 
 const List: FC<ListProps> = ({ children, rowHeight = 100, gap = 1, bufferElements = 3 }) => {
   const listRef = useRef<HTMLDivElement>(null);
