@@ -11,7 +11,7 @@ const App: FC = () => {
     <Layout>
       <List rowHeight={100}>
         {products.map((product, i) => (
-          <ListElement key={product.id} product={product} index={i} />
+          <ListElement key={i} product={product} index={i} />
         ))}
       </List>
     </Layout>

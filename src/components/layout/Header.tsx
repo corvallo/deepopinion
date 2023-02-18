@@ -1,7 +1,9 @@
-import { FC } from "react";
+import { FC, useContext } from "react";
+import { ProductsContext } from "../../providers/ProductsProvider";
 import RowOptions from "../controls/RadioGroup";
 
 const Header: FC = () => {
+  const { generateProducts, addProduct } = useContext(ProductsContext);
   return (
     <header className='header'>
       <div className='header__title'>
@@ -16,11 +18,13 @@ const Header: FC = () => {
               { value: 10000, label: `10000 Rows` },
               { value: 100000, label: `100000 Rows` },
             ]}
-            onChange={(e) => console.log(e.currentTarget.value)}
+            onChange={(e) => generateProducts(Number(e.currentTarget.value))}
           />
         </div>
         <div className='header__actions-right'>
-          <button className='btn-default'>Add new item</button>
+          <button className='btn-default' onClick={() => addProduct()}>
+            Add new item
+          </button>
         </div>
       </div>
     </header>

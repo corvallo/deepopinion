@@ -1,7 +1,7 @@
 import { cloneElement, FC, useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { ListProps } from "../../@typings/list";
 
-const List: FC<ListProps> = ({ children, rowHeight = 100, gap = 1, bufferElements = 3 }) => {
+const List: FC<ListProps> = ({ children, rowHeight = 100, gap = 1, bufferElements = 2 }) => {
   const listRef = useRef<HTMLDivElement>(null);
   const scrollPositionRef = useRef<number>(0);
   const [scrollPosition, setScrollPosition] = useState<number>(0);
@@ -37,12 +37,16 @@ const List: FC<ListProps> = ({ children, rowHeight = 100, gap = 1, bufferElement
 
   const onScroll = useCallback((e: React.UIEvent<HTMLDivElement>) => {
     scrollPositionRef.current = e.currentTarget.scrollTop;
-    if (Math.abs(scrollPosition - scrollPositionRef.current) > rowHeight) {
-      setScrollPosition(scrollPositionRef.current);
-    }
+    setScrollPosition(scrollPositionRef.current);
   }, []);
+
   return (
     <div className='list' ref={listRef} onScroll={onScroll}>
+      <div className='list__header'>
+        <div>Product</div>
+        <div>Description</div>
+        <div>Price</div>
+      </div>
       <div style={{ height: `${innerHeight}px` }}>{visibleChildrens}</div>
     </div>
   );

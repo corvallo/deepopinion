@@ -4,6 +4,23 @@
   overflow-y: auto;
   position: relative;
   height: 100%;
+  z-index: 1;
+  &__header {
+    display: flex;
+    align-items: center;
+
+    & > div {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 700;
+      height: 100%;
+      line-height: 101px;
+      border: 1px solid black;
+    }
+  }
   &__element {
     display: flex;
     align-items: center;
