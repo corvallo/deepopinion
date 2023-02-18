@@ -1,4 +1,5 @@
 import { FC } from "react";
+import RowOptions from "../controls/RadioGroup";
 
 const Header: FC = () => {
   return (
@@ -8,19 +9,15 @@ const Header: FC = () => {
       </div>
       <div className='header__actions'>
         <div className='header__actions-left'>
-          <label className='radio'>
-            <input className='radio__input' type='radio' name='rows' />
-            <span className='radio__label'>1000 Rows</span>
-          </label>
-
-          <label className='radio'>
-            <input className='radio__input' type='radio' name='rows' />
-            <span className='radio__label'>10000 Rows</span>
-          </label>
-          <label className='radio'>
-            <input className='radio__input' type='radio' name='rows' />
-            <span className='radio__label'>100000 Rows</span>
-          </label>
+          <RowOptions
+            name='rows'
+            options={[
+              { value: 1000, label: `1000 Rows` },
+              { value: 10000, label: `10000 Rows` },
+              { value: 100000, label: `100000 Rows` },
+            ]}
+            onChange={(e) => console.log(e.currentTarget.value)}
+          />
         </div>
         <div className='header__actions-right'>
           <button className='btn-default'>Add new item</button>

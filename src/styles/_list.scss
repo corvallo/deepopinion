@@ -1,5 +1,40 @@
+@import "colors";
+
 .list {
   overflow-y: auto;
   position: relative;
   height: 100%;
+  &__element {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    line-height: 101px;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid $black;
+    padding: 0px;
+    &-inner {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 14px;
+      padding: 5px;
+      height: 100%;
+      & > span {
+        line-height: 14px;
+        padding: 0 10px;
+      }
+      &:nth-child(1) {
+        border-left: 2px solid $black;
+      }
+      &:nth-child(2) {
+        border-left: 2px solid $black;
+        border-right: 2px solid $black;
+      }
+      &:nth-child(3) {
+        border-right: 2px solid $black;
+      }
+    }
+  }
 }
