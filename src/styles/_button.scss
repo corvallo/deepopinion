@@ -1,0 +1,39 @@
+@import "colors";
+@import "mixins";
+.btn {
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.875rem;
+  &-default {
+    background: transparent;
+    border: 2px solid $black;
+    padding: 15px 25px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    &:hover {
+      background: $gray-100;
+    }
+    @include breakpoint_mixin(mobile) {
+      font-size: 0.75rem;
+      padding: 10px 15px;
+    }
+  }
+  &-fab {
+    border-radius: 100%;
+    padding: 10px;
+    position: absolute;
+    background: black;
+    cursor: pointer;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    transform: translate(-50%, -50%);
+    transition: all 0.3s ease-in-out;
+    border: 2px solid #000;
+    z-index: 1000;
+    &:hover {
+      background: white;
+      & > svg > path {
+        fill: black;
+      }
+    }
+  }
+}

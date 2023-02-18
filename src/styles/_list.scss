@@ -1,0 +1,70 @@
+@import "colors";
+@import "mixins";
+.list {
+  overflow-y: auto;
+  position: relative;
+  height: 100%;
+  z-index: 1;
+  &__header {
+    display: flex;
+    align-items: center;
+    &-inner {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.875rem;
+      font-weight: 700;
+      height: 100%;
+      line-height: 101px;
+      border: 1px solid black;
+      &:nth-child(2) {
+        border-left: 2px solid $black;
+        border-right: 2px solid $black;
+        @include breakpoint_mixin(mobile) {
+          display: none;
+        }
+      }
+    }
+  }
+  &__element {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    line-height: 101px;
+    left: 0;
+    right: 0;
+    border-bottom: 1px solid $black;
+    padding: 0px;
+    &-inner {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.75rem;
+      line-height: 0.75rem;
+      padding: 5px;
+      height: 100%;
+      & > span {
+        line-height: 0.75rem;
+        padding: 0 10px;
+      }
+      &:nth-child(1) {
+        border-left: 2px solid $black;
+        @include breakpoint_mixin(mobile) {
+          border-right: 2px solid $black;
+        }
+      }
+      &:nth-child(2) {
+        border-left: 2px solid $black;
+        border-right: 2px solid $black;
+        @include breakpoint_mixin(mobile) {
+          display: none;
+        }
+      }
+      &:nth-child(3) {
+        border-right: 2px solid $black;
+      }
+    }
+  }
+}

@@ -1,0 +1,29 @@
+@import "colors";
+@import "mixins";
+
+.radio {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+  cursor: pointer;
+
+  &__group {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+  &__input {
+    height: 1.2rem;
+    width: 1.2rem;
+    margin-right: 0.5rem;
+    accent-color: $black;
+    cursor: pointer;
+  }
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 400;
+    @include breakpoint_mixin(mobile) {
+      font-size: 0.75rem;
+    }
+  }
+}

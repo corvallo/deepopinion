@@ -1,0 +1,18 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  font-size: 16px;
+  font-family: "Inter";
+  font-weight: 400;
+  font-style: normal;
+  height: 100vh;
+}
+
+header,
+footer {
+  display: block;
+}
