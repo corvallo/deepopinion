@@ -1,6 +1,6 @@
 import { FC, useContext } from "react";
 import { ProductsContext } from "../../providers/ProductsProvider";
-import RowOptions from "../controls/RadioGroup";
+import RadioGroup from "../controls/RadioGroup";
 
 const Header: FC = () => {
   const { generateProducts, addProduct } = useContext(ProductsContext);
@@ -11,7 +11,7 @@ const Header: FC = () => {
       </div>
       <div className='header__actions'>
         <div className='header__actions-left'>
-          <RowOptions
+          <RadioGroup
             name='rows'
             options={[
               { value: 1000, label: `1000 Rows` },
